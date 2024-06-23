@@ -9,12 +9,14 @@ from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 
+image_path = "C:\\Users\\ishika.priya\\OneDrive - Accenture\\Desktop\\IP_Extra\\download.jpg"
+
 def main():
     load_dotenv()
     openai_api_key = os.getenv("OPENAI_API_KEY")
     st.set_page_config(page_title="ChatBot")
     with st.sidebar:
-        img = Image.open("C:\\Users\\ishika.priya\\OneDrive - Accenture\\Desktop\\IP_Extra\\download.jpg")
+        img = Image.open(image_path)
         st.image(img, width=250)
         st.markdown("<h1 style='text-align: left;font-size: 34px;'><b>ChatBot💬</b></h1>", unsafe_allow_html=True)
 
